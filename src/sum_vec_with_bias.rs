@@ -18,11 +18,11 @@ pub fn sum_vec_with_bias_old(source: &Vec<u32>) -> String {
     acc
 }
 
-pub fn sum_vec_with_bias(source: &Vec<u32>) -> String {
+pub fn sum_vec_with_bias(source: &Vec<String>) -> String {
     source
         .iter()
         .enumerate()
-        .map(|(index, &el)| add_zeros(&el, index))
+        .map(|(index, el)| add_zeros(el, index))
         .reduce(|a, b| sum(&a, &b))
         .unwrap()
 }
@@ -33,7 +33,10 @@ mod tests {
 
     #[test]
     fn test1() {
-        let source: Vec<u32> = Vec::from([18, 12, 6]);
+        let source: Vec<String> = Vec::from([18, 12, 6])
+            .iter()
+            .map(|it| it.to_string())
+            .collect();
         let expected: String = String::from("738");
         let at_result = sum_vec_with_bias(&source);
         assert_eq!(at_result, expected);
@@ -41,17 +44,23 @@ mod tests {
 
     #[test]
     fn test2() {
-        let source: Vec<u32> = Vec::from([120, 18, 9]);
+        let source: Vec<String> = Vec::from([120, 18, 9])
+            .iter()
+            .map(|it| it.to_string())
+            .collect();
         let expected: String = String::from("1200");
         let at_result = sum_vec_with_bias(&source);
         assert_eq!(at_result, expected);
     }
 
-    /*    #[test]
-    fn sl_plus_dop() {
-        let source: Vec<u32> = Vec::from([9 , 18, 920]);
-        let expected:String = String::from("1200");
+    #[test]
+    fn test3() {
+        let source: Vec<String> = Vec::from([9, 18, 920])
+            .iter()
+            .map(|it| it.to_string())
+            .collect();
+        let expected: String = String::from("92189");
         let at_result = sum_vec_with_bias(&source);
         assert_eq!(at_result, expected);
-    }*/
+    }
 }
