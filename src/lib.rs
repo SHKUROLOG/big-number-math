@@ -4,6 +4,7 @@
 #![crate_name = "big_number_math"]
 
 pub mod add_zeros;
+pub mod factorial;
 pub mod get_char_at_index;
 pub mod multiply;
 pub mod sum;

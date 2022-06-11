@@ -12,29 +12,22 @@ pub fn sum(a: &String, b: &String) -> String {
 
     for index in 0..max_len {
         let a_number = get_char_at_index(&a_rev, index).unwrap_or(0);
-        println!(" b index {} ", index);
         let b_number = get_char_at_index(&b_rev, index).unwrap_or(0);
         let ab_num: u32 = a_number + b_number;
-        println!("ab_num {}", ab_num);
         let to_parse = ab_num % 10;
-        println!(" to_parse {} ", to_parse);
         let mut to_save = (ab_num - to_parse) / 10;
-        println!(" to_save {} ", to_save);
         let mut number_result = to_parse + in_mind;
-        println!(" number_result {} ", number_result);
         if number_result == 10 {
             to_save += 1;
             number_result = 0;
         }
         let result = char::from_digit(number_result, 10).unwrap();
         main_result.insert(0, result);
-        println!(" main_result {} ", main_result);
         in_mind = to_save;
     }
     if in_mind > 0 {
         main_result.insert(0, char::from_digit(in_mind, 10).unwrap());
     }
-    println!("{}", main_result);
     main_result
 }
 
