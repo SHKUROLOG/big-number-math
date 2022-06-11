@@ -1,10 +1,11 @@
 [package]
-name = "untitled3"
-[lib]
 name = "big-number-math"
-path = "src/lib.rs"
 version = "0.1.0"
 edition = "2021"
+[lib]
+name = "big_number_math"
+path = "src/lib.rs"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
