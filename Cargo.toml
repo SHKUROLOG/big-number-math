@@ -1,5 +1,8 @@
 [package]
 name = "untitled3"
+[lib]
+name = "big-number-math"
+path = "src/lib.rs"
 version = "0.1.0"
 edition = "2021"
 
