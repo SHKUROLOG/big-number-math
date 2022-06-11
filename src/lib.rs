@@ -5,5 +5,6 @@
 
 pub mod add_zeros;
 pub mod get_char_at_index;
+pub mod multiply;
 pub mod sum;
 pub mod sum_vec_with_bias;
